@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+.topnav {
+  @include flex(flex-start, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding-top: 20px;
+  border-bottom: 2px solid rgb(120, 119, 119);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 1px);
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    z-index: -2;
+  }
+
+  &__nav {
+    @include flex();
+    gap: 4rem;
+    color: #fff;
+    font-weight: 500;
+
+    &-item {
+      font-size: 14px;
+      position: relative;
+      letter-spacing: 0.5px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        bottom: -33.6px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease-out;
+      }
+      &.active::before,
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
