@@ -74,6 +74,47 @@
       bottom: calc(5% - 1px);
     }
   }
+
+  .scroll {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    @include flex();
+    flex-direction: column;
+
+    .up {
+      margin-bottom: 1rem;
+    }
+    .down {
+      margin-top: 1rem;
+    }
+
+    button {
+      background-color: rgb(61, 61, 224);
+      color: #fff;
+      padding: 24px 40px;
+      border: none;
+      cursor: pointer;
+      z-index: 4;
+    }
+
+    .txt {
+      border: none;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 12px;
+      height: 89px;
+      width: 151px;
+      background-color: transparent;
+      cursor: unset;
+      z-index: 1;
+    }
+  }
 }
 
 .rightsidebar {
@@ -132,5 +173,35 @@
   &__esp {
     position: absolute;
     bottom: 10px;
+  }
+
+  .infomation {
+    position: absolute;
+    top: 101px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 72%;
+    width: 100%;
+    z-index: 1;
+
+    button,
+    .scroll .txt {
+      border: none;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 12px;
+      height: 89px;
+      width: 151px;
+      background-color: transparent;
+      cursor: pointer;
+      &.active {
+        background-color: rgb(61, 61, 224);
+      }
+    }
   }
 }

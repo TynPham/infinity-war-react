@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Inicio.scss";
-import Portal from "../Portal";
 import {
   faChevronLeft,
   faChevronRight,
@@ -8,51 +7,29 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { listNumber, mainData } from "../../data/datas";
 import InicioItem from "../inicio-item/InicioItem";
+import { handleScrollNext, handleScroll } from "../../utils/util";
+import Portal from "../Portal";
 
-function Main(props) {
+function Inicio(props) {
   const [indexActive, setIndexActive] = useState(0);
-  const handleIndexActive = (result) => {
-    window.scrollTo({
-      top: result * window.innerHeight,
-      behavior: "smooth",
-    });
-    setIndexActive(result);
-  };
-  const handleScrollTop = (result) => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    setIndexActive(0);
-  };
-  const handleScrollNext = (result) => {
-    window.scrollTo({
-      top: result * window.innerHeight,
-      behavior: "smooth",
-    });
-    setIndexActive(result);
-  };
-
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    handleScroll(0);
   }, []);
 
   return (
-    <div className="main">
-      {mainData.map((item, index) => (
-        <div className="main-item" key={index}>
-          <InicioItem
-            item={item}
-            index={index}
-            handleScrollTop={handleScrollTop}
-            handleScrollNext={handleScrollNext}
-          />
-        </div>
-      ))}
-
+    <>
+      <div className="main">
+        {mainData.map((item, index) => (
+          <div className="main-item" key={index}>
+            <InicioItem
+              item={item}
+              index={index}
+              handleScrollNext={handleScrollNext}
+              setIndex={setIndexActive}
+            />
+          </div>
+        ))}
+      </div>
       <Portal containerClass={"leftsidebar"}>
         <div className="leftsidebar__compartir">COMPARTIR</div>
         <button className="leftsidebar__button leftsidebar__button-left">
@@ -76,7 +53,10 @@ function Main(props) {
           {listNumber.map((item, index) => (
             <span
               key={index}
-              onClick={() => handleIndexActive(item.number)}
+              onClick={() => {
+                handleScroll(item.number);
+                setIndexActive(item.number);
+              }}
               className={`rightsidebar__number-item ${
                 index === indexActive ? "active" : ""
               }`}
@@ -86,8 +66,8 @@ function Main(props) {
           ))}
         </div>
       </Portal>
-    </div>
+    </>
   );
 }
 
-export default Main;
+export default Inicio;

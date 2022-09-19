@@ -3,7 +3,7 @@ import "./InicioItem.scss";
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
 
-function InicioItem({ item, index, handleScrollTop, handleScrollNext }) {
+function InicioItem({ item, index, handleScrollNext, setIndex }) {
   return (
     <div
       className="main-body"
@@ -21,9 +21,10 @@ function InicioItem({ item, index, handleScrollTop, handleScrollNext }) {
       <Link to={"/trailer"} className="main-body__trailerbtn2"></Link>
       <button
         className="main-body__downbtn"
-        onClick={() =>
-          index === 4 ? handleScrollTop(0) : handleScrollNext(index + 1)
-        }
+        onClick={() => {
+          const result = handleScrollNext(index, 4);
+          setIndex(result);
+        }}
       >
         <span></span>
         <span></span>

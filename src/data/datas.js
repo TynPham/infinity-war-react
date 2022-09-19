@@ -4,6 +4,7 @@ export const listCast = [
   },
   {
     img: require("../assets/images/iron-cast.jpg"),
+    color: true,
   },
   {
     img: require("../assets/images/thor-cast.jpg"),
@@ -13,39 +14,34 @@ export const listCast = [
   },
   {
     img: require("../assets/images/blackwd-cast.jpg"),
+    color: true,
   },
 ];
 export const listBgCast = [
   {
     bg: require("../assets/images/captain-bg.jpg"),
-    poster: require("../assets/images/captain.png"),
+    poster: require("../assets/images/captain-poster.png"),
     name: "captain america",
-    content:
-      "<p>Hai vị trí á quân ở giải M15 tại Pháp và Thái Lan hồi đầu năm là bước khởi đầu cho quãng thời gian phát triển của chàng trai 25 tuổi. Sau đó, anh có ba lần liên tiếp vô địch trên sân nhà Việt Nam vào tháng 6 và 7.</p><p>Mới đây nhất, Lý Hoàng Nam cũng chơi tương đối ấn tượng tại chuỗi 3 giải ATP Challenger 50 Bangkok Open liên tiếp tại Thái Lan. Cụ thể, anh giành ngôi Á quân ở lần đầu, dừng bước tại vòng 2 ở giải đấu sau đó và vào tứ kết ở giải cuối cùng.</p><p>Ngoài ra, anh cũng tự phá kỷ lục của chính mình về thứ hạng cao nhất mà một tay vợt Việt Nam (không tính nhập tịch) từng có được khi mà vào tháng trước, ngôi sao sinh năm 1997 đã lọt vào top 300 với hạng 290.</p>",
   },
   {
     bg: require("../assets/images/iron-bg.jpg"),
     poster: require("../assets/images/iron-poster.png"),
     name: "iron man",
-    content: "",
   },
   {
     bg: require("../assets/images/thor-bg.jpg"),
     poster: require("../assets/images/thor-poster.png"),
     name: "thor",
-    content: "",
   },
   {
     bg: require("../assets/images/doctor-bg.jpg"),
     poster: require("../assets/images/doctor-poster.png"),
     name: "doctor strange",
-    content: "",
   },
   {
     bg: require("../assets/images/black-bg.jpg"),
     poster: require("../assets/images/black-poster.png"),
-    name: "captain america",
-    content: "",
+    name: "black window",
   },
 ];
 export const listNumber = [
@@ -77,12 +73,14 @@ export const mainData = [
     title:
       "<span>world premiere <span className='bold'>23 april</span> do not wait more</span>",
     subtitle: "The most anticipated movie of there is here",
+    index: 0,
   },
   {
     background: require("../assets/images/thanos-fight.jpg"),
     title:
       "<span>thanos the crazy titan,great t, the thuano, <span className='bold'>conqueror of worlds.</span></span>",
     subtitle: "The most anticipated movie of there is here",
+    index: 1,
   },
   {
     background: require("../assets/images/doctor.jpg"),

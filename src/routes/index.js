@@ -1,4 +1,4 @@
-import Cast from "../component/cast/Cast";
+import Cast from "../component/inicio/Cast";
 import Gallery from "../component/gallery/Gallery";
 import Inicio from "../component/inicio/Inicio";
 import Synopsis from "../component/synopsis/Synopsis";
